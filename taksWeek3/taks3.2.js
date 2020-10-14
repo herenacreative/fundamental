@@ -1,6 +1,6 @@
-const pageBook = (page, limit) => {
+const pageBook = (page) => {
     //validasi
-    if(!/^[0-9]+$/.test(limit) || limit == ''){
+    if(!/^[0-9]+$/.test(page) || page == ''){
         console.log("Please only enter Number")
         return false
     }
@@ -8,10 +8,8 @@ const pageBook = (page, limit) => {
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             const dataBook = ['aaa', 'bbbb','ccc', 'ddd', 'fff', 'ggg']
-            const count =parseInt(dataBook.length/limit)
-            const start = (page - 1) * count
-            const end = (page + 1) * count
-
+            const start = (page - 1)
+            const end = (page + 1)
             const result = dataBook.slice(start, end)
             if(result){
                 resolve(`< ${start} - ${result} - ${end} >`)
@@ -22,9 +20,16 @@ const pageBook = (page, limit) => {
     })
 }
 
+// pageBook(2).then((res)=>{
+//     console.log(res)
+// })
+// .catch((err)=>{
+//     console.log(err.message)
+// })
+
 const getBook = async() =>{
     try{
-        let result = await pageBook(2, 2)
+        let result = await pageBook(4)
         console.log(result)
     }catch(e){
         console.log(e.message)

@@ -21,4 +21,4 @@ const devideAndSort = (num) =>{
     }
         console.log(parseInt(newStr));
 }
-devideAndSort(5956560159466056)
+devideAndSort(546813508418450545284)

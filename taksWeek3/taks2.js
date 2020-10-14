@@ -1,8 +1,8 @@
 const getmonth = (callback) =>{
     setTimeout(() => {
-        let err = false;
+        let err = true;
         let month = ['January', 'February', "March", "April", "May", "Juny",
-                    "July", "Agust", "September", "October", "November", "Desenber"]
+                    "July", "Agust", "September", "October", "November", "Desember"]
         if(!err){
             callback(null, month)
         }else{
